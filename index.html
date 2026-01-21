@@ -78,13 +78,12 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(12px);
         }
-        
-        .portfolio-instruction {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+
+        /* Interactive Image Classes */
+        .interactive-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -100,7 +99,7 @@
                     </svg>
                     Close & Return
                 </button>
-                <div class="font-serif text-lg italic text-stone/20">Legal Framework & Compliance</div>
+                <div class="font-serif text-lg italic text-stone/20">Legal Framework & Governance</div>
             </div>
         </div>
         <div class="max-w-4xl mx-auto py-12 pb-32">
@@ -174,14 +173,18 @@
     </header>
 
     <!-- Exclusivity Manifesto -->
-    <section id="exclusivity" class="py-24 md:py-32 bg-offblack bg-[#111] text-stone relative overflow-hidden">
+    <section id="exclusivity" class="py-24 md:py-32 bg-[#111] text-stone relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
-                    <span class="text-gold uppercase tracking-[0.3em] text-[10px] block mb-6 font-bold">Our Philosophy</span>
+                    <div class="mb-6 flex items-center gap-3">
+                        <span class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Our Philosophy</span>
+                        <span class="w-8 h-[1px] bg-white/10"></span>
+                        <span class="text-white/30 text-[9px] uppercase tracking-[0.2em] italic">(Hover or touch images to reveal color)</span>
+                    </div>
                     <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">
                         Reserved for the <br>
-                        <span class="italic text-gold text-stone/90">Truly Remarkable.</span>
+                        <span class="italic text-gold">Truly Remarkable.</span>
                     </h2>
                     <div class="space-y-6 text-stone/60 font-light text-lg leading-relaxed">
                         <p>
@@ -196,7 +199,7 @@
                         <span class="px-4 py-2 border border-white/10 rounded-full text-[9px] uppercase tracking-widest text-gold/80">Private Management</span>
                     </div>
                 </div>
-                <div class="reveal delay-200 border border-white/5 p-4 bg-charcoal group cursor-pointer overflow-hidden">
+                <div class="reveal delay-200 border border-white/5 p-4 bg-charcoal group interactive-container">
                     <div class="aspect-[4/5] overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-100 group-hover:grayscale-0 transition duration-1000" alt="Private Banquet">
                     </div>
@@ -235,8 +238,8 @@
                     <div class="font-serif text-gold text-2xl italic mb-4">01.</div>
                     <h3 class="font-serif text-xl text-charcoal mb-4 group-hover:text-gold transition min-h-[3rem] flex items-center">Heritage Venues</h3>
                     <p class="text-charcoal/70 font-light text-sm leading-relaxed mb-6 min-h-[4rem]">Exclusive access to private estates and retreats for high-society unions all over Bangladesh.</p>
-                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone">
-                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110">
+                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone interactive-container">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110" alt="Venue">
                     </div>
                 </div>
                 <!-- Card 02 -->
@@ -244,8 +247,8 @@
                     <div class="font-serif text-gold text-2xl italic mb-4">02.</div>
                     <h3 class="font-serif text-xl text-charcoal mb-4 group-hover:text-gold transition min-h-[3rem] flex items-center">Cinematic Memory</h3>
                     <p class="text-charcoal/70 font-light text-sm leading-relaxed mb-6 min-h-[4rem]">High-fashion editorial wedding photography and cinematic 4K storytelling.</p>
-                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110">
+                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone interactive-container">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110" alt="Cinematography">
                     </div>
                 </div>
                 <!-- Card 03 -->
@@ -253,8 +256,8 @@
                     <div class="font-serif text-gold text-2xl italic mb-4">03.</div>
                     <h3 class="font-serif text-xl text-charcoal mb-4 group-hover:text-gold transition min-h-[3rem] flex items-center">Gourmet Banquets</h3>
                     <p class="text-charcoal/70 font-light text-sm leading-relaxed mb-6 min-h-[4rem]">Curation of generational head chefs for bespoke royal traditional feasts.</p>
-                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone">
-                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110">
+                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone interactive-container">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110" alt="Catering">
                     </div>
                 </div>
                 <!-- Card 04 -->
@@ -262,8 +265,8 @@
                     <div class="font-serif text-gold text-2xl italic mb-4">04.</div>
                     <h3 class="font-serif text-xl text-charcoal mb-4 group-hover:text-gold transition min-h-[3rem] flex items-center">Floral Couture</h3>
                     <p class="text-charcoal/70 font-light text-sm leading-relaxed mb-6 min-h-[4rem]">Architectural floral design and custom structural builds transforming environments.</p>
-                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone">
-                        <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110">
+                    <div class="mt-auto overflow-hidden aspect-[4/5] bg-stone interactive-container">
+                        <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 scale-100 group-hover:scale-110" alt="Floral">
                     </div>
                 </div>
             </div>
@@ -275,37 +278,33 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
                 <h2 class="font-serif text-4xl md:text-5xl">Our <span class="italic text-gold">Masterworks</span></h2>
-                <div class="mt-4 md:mt-0 flex items-center gap-2 text-gold">
-                    <span class="portfolio-instruction text-[10px] uppercase tracking-widest font-bold">Hover or Touch to reveal beautiful colored memories</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
-                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group cursor-pointer reveal">
+                <div class="group reveal interactive-container">
                     <div class="overflow-hidden relative aspect-[4/5] mb-6">
                         <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                        <div class="absolute bottom-4 left-4"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">PRIVATE GALA</span></div>
+                        <div class="absolute bottom-4 left-4 z-20"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">PRIVATE GALA</span></div>
                     </div>
                     <div class="border-t border-stone/20 pt-4">
                         <h3 class="font-serif text-2xl mb-2 group-hover:text-gold transition">The Royal Union</h3>
                         <p class="text-stone/60 font-light text-xs">A masterwork of elite service standards and immersive aesthetics.</p>
                     </div>
                 </div>
-                <div class="group cursor-pointer reveal delay-100">
+                <div class="group reveal delay-100 interactive-container">
                     <div class="overflow-hidden relative aspect-[4/5] mb-6">
                         <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                        <div class="absolute bottom-4 left-4"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">HERITAGE COMMISSION</span></div>
+                        <div class="absolute bottom-4 left-4 z-20"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">HERITAGE COMMISSION</span></div>
                     </div>
                     <div class="border-t border-stone/20 pt-4">
                         <h3 class="font-serif text-2xl mb-2 group-hover:text-gold transition">Estate Celebration</h3>
                         <p class="text-stone/60 font-light text-xs">Traditional union within curated historical environments.</p>
                     </div>
                 </div>
-                <div class="group cursor-pointer reveal delay-200">
+                <div class="group reveal delay-200 interactive-container">
                     <div class="overflow-hidden relative aspect-[4/5] mb-6">
                         <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                        <div class="absolute bottom-4 left-4"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">PRIVATE BANQUET</span></div>
+                        <div class="absolute bottom-4 left-4 z-20"><span class="text-[9px] bg-gold text-charcoal px-2 py-1 uppercase font-bold tracking-tighter">PRIVATE BANQUET</span></div>
                     </div>
                     <div class="border-t border-stone/20 pt-4">
                         <h3 class="font-serif text-2xl mb-2 group-hover:text-gold transition">Palace Protocol</h3>
@@ -360,17 +359,6 @@
                         <span class="font-serif text-2xl text-white group-hover:text-gold transition">+880 1706 652 530</span>
                     </a>
                 </div>
-                <div class="flex justify-center gap-8 mt-4">
-                    <a href="https://www.instagram.com/varenoeventsbd/" target="_blank" class="text-stone/40 hover:text-gold transition flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
-                         Instagram
-                    </a>
-                    <a href="https://www.facebook.com/varenoeventsbd/" target="_blank" class="text-stone/40 hover:text-gold transition flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
-                         Facebook
-                    </a>
-                    <a href="#" target="_blank" class="text-stone/40 hover:text-gold transition flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
-                         LinkedIn
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -387,7 +375,9 @@
                     <h4 class="text-white text-[10px] tracking-widest uppercase mb-6 font-bold">Legal</h4>
                     <ul class="space-y-4 text-[10px] uppercase tracking-widest">
                         <li><button onclick="showLegal('privacy')" class="hover:text-gold transition text-left">Privacy Governance</button></li>
-                        <li><button onclick="showLegal('gdpr')" class="hover:text-gold transition text-left">GDPR Compliance</button></li>
+                        <li><button onclick="showLegal('liability')" class="hover:text-gold transition text-left">Service Liability</button></li>
+                        <li><button onclick="showLegal('payments')" class="hover:text-gold transition text-left">Payment Protocols</button></li>
+                        <li><button onclick="showLegal('ethics')" class="hover:text-gold transition text-left">Ethical Conduct</button></li>
                         <li><button onclick="showLegal('terms')" class="hover:text-gold transition text-left">Commission Protocols</button></li>
                     </ul>
                 </div>
@@ -408,22 +398,53 @@
             privacy: { 
                 content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">Privacy Governance</h2>
                           <div class="space-y-6 text-stone/80 font-light leading-relaxed">
-                            <p>VARENO Events BD understands that our clients require absolute security. Planning data, guest lists, and venue schematics are handled through encrypted channels.</p>
-                            <p>We do not utilize client imagery for marketing without signed media releases. All physical records of private blueprints are destroyed post-event completion.</p>
+                            <p>VARENO Events BD understands that our luxury clients require absolute security. Planning data, guest lists, and venue schematics are handled through encrypted channels.</p>
+                            <p><strong>Digital Discretion:</strong> We do not utilize client imagery or names for marketing without signed media releases. All digital records of private blueprints are moved to cold storage post-event completion.</p>
+                            <p><strong>NDA Framework:</strong> Upon request, we provide a mutual Non-Disclosure Agreement (NDA) for all high-profile commissions to protect the identity and details of the union.</p>
                           </div>` 
             },
-            gdpr: { 
-                content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">GDPR Compliance</h2>
+            liability: { 
+                content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">Service Liability</h2>
                           <div class="space-y-6 text-stone/80 font-light leading-relaxed">
-                            <p>Under General Data Protection Regulation (GDPR), we ensure the right to access and delete your personal data. Our servers follow strict high-protocol security standards.</p>
-                            <p>For international clients and destination unions, we maintain cross-border compliance regarding the handling of VIP information and contractual data.</p>
+                            <p>We maintain a rigorous standard of accountability for every private commission. Our liability framework is designed to protect both the agency and the client.</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Third-Party Accountability:</strong> While we vet all artisanal vendors (catering, floral, construction), VARENO acts as the lead orchestrator. Any direct product defects from third parties are managed through our resolution protocol.</li>
+                                <li><strong>Venue Integrity:</strong> VARENO is responsible for structural decor safety. However, damage to existing venue property caused by guests falls under the host's indemnity.</li>
+                                <li><strong>Insurance Liaison:</strong> For high-value commissions, we recommend and facilitate specialized event insurance to cover unforeseen structural or logistical interruptions.</li>
+                            </ul>
+                          </div>` 
+            },
+            payments: { 
+                content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">Payment Protocols</h2>
+                          <div class="space-y-6 text-stone/80 font-light leading-relaxed">
+                            <p>To ensure the seamless mobilization of resources, we adhere to a structured fiscal schedule.</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Mobilization Fee:</strong> A non-refundable commitment fee is required to secure your date and initiate architectural site planning.</li>
+                                <li><strong>Installment Schedule:</strong> Payments are staggered based on mobilization milestones (e.g., vendor bookings, material procurement, and final 14-day clearance).</li>
+                                <li><strong>Taxation:</strong> In accordance with Bangladesh NBR regulations, all payments are subject to applicable VAT and AIT (Advance Income Tax) where required by law.</li>
+                                <li><strong>Currency:</strong> Transactions are processed in BDT or equivalent international currency through authorized banking channels only.</li>
+                            </ul>
+                          </div>` 
+            },
+            ethics: { 
+                content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">Ethical Conduct</h2>
+                          <div class="space-y-6 text-stone/80 font-light leading-relaxed">
+                            <p>As a premier collective, we uphold the highest moral standards in our operations within Bangladesh.</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Zero Tolerance for Bribery:</strong> VARENO operates with total transparency; we do not engage in or tolerate kickbacks from vendors or unauthorized facilitation payments.</li>
+                                <li><strong>Fair Labor:</strong> We strictly audit our field teams to ensure no child labor is involved in decor construction or hospitality services.</li>
+                                <li><strong>Cultural Sensitivity:</strong> We respect the diverse religious and cultural traditions of Bangladesh, ensuring all event elements are curated with appropriate reverence and social sensitivity.</li>
+                                <li><strong>Sustainability:</strong> We prioritize vendors who practice waste reduction and responsible disposal of structural decor materials.</li>
+                            </ul>
                           </div>` 
             },
             terms: { 
                 content: `<h2 class="font-serif text-4xl mb-8 text-stone italic">Commission Protocols</h2>
                           <div class="space-y-6 text-stone/80 font-light leading-relaxed">
                             <p>We operate as a private collective. Commissions are accepted based on availability and creative alignment. We specialize strictly in premium-tier, private wedding management.</p>
-                            <p>General event orders or low-volume requests are routinely declined to ensure our core focus on high-protocol artisanal masterworks remains uncompromised.</p>
+                            <p><strong>Booking Policy:</strong> A confirmed commission requires a signed service agreement and a standard commitment fee. Due to our selective nature, fees are non-refundable once site mobilization begins.</p>
+                            <p><strong>Force Majeure:</strong> VARENO is not liable for delays caused by "Acts of God," political unrest, or sudden national lockdowns in Bangladesh, though we provide priority rescheduling protocols for all such instances.</p>
+                            <p><strong>Exclusive Management:</strong> We do not allow third-party management overlap once a commission is accepted; VARENO maintains total architectural control of the event lifecycle.</p>
                           </div>` 
             }
         };
@@ -446,9 +467,6 @@
             }, 400);
         }
 
-        function toggleMenu() { document.getElementById('mobile-menu')?.classList.toggle('hidden'); }
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMenu);
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
@@ -458,6 +476,13 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) { nav.classList.add('shadow-xl', 'bg-charcoal'); nav.classList.remove('bg-charcoal/90'); }
             else { nav.classList.remove('shadow-xl', 'bg-charcoal'); nav.classList.add('bg-charcoal/90'); }
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        mobileMenuBtn.addEventListener('click', () => {
+            const items = document.querySelector('.hidden.lg\\:flex.space-x-12');
+            items.classList.toggle('hidden');
         });
     </script>
 </body>
